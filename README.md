@@ -27,9 +27,8 @@ Objective of this DApp is to Issue Certificates on Eleven01 Blockchain<br>
 <b>Developed on :</b> TestNet<br>
 
 ### Build your Own DApp
-Checkout the below Video and it gives you great insights to build your next DApp on Eleven01 Blockchain Platform.
-
-[![IMAGE ALT TEXT HERE](https://user-images.githubusercontent.com/46481618/55214789-af4b7d00-521d-11e9-8872-a309a9bcba12.jpg)](https://www.youtube.com/watch?v=EHQtyaUKn5I)
+Checkout the below link and it gives you great insights to build your next DApp on Eleven01 Blockchain Platform.
+- **[Build a DApp](https://www.youtube.com/watch?v=EHQtyaUKn5I)** - Build a DApp on Eleven01.
 
 # Resources
 
