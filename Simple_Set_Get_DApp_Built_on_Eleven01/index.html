@@ -1,0 +1,185 @@
+<html>
+<head>
+
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	 
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<!-- web3.js 1.0.0 -->    
+	<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
+  <title>SimpleStorage DApp</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body class="container">
+	<br>
+<img src="image/eleven01.png" alt="Eleven01">
+
+<br><br>
+<div class="tab"><center>
+  <button class="tablinks" onclick="openTab(event, 'set')">set</button>
+  <button class="tablinks" onclick="openTab(event, 'get')">get</button>
+</div></center>
+
+  <div id="set" class="tabcontent">
+	<h3>Set A Number</h3>
+	    <table class="table">
+	      <tbody>
+          
+          <tr>
+            <td>Enter Number</td>
+            <td><input type="text" id="setNumber" maxlength="18" /></td>
+          </tr>
+          <tr>
+            <td></td>
+              <td><a href="#" onclick="set()" class="btn btn-primary">set</a></td>
+            </tr>
+            <tr>
+              <td>Status:</td>
+              <td><p id="setStatus"><p></td>
+            </tr>
+            <tr>
+              <td>Block Number:</td>
+              <td><p id="setBlockNumber"><p></td>
+            </tr>
+            <tr>
+              <td>Block Hash:</td>
+              <td><p id="setHash"><p></td>
+            </tr>
+	      </tbody>
+	    </table>
+</div>
+<div id="get" class="tabcontent">
+	<h3>Get A Number</h3>
+	     <tr>
+            <td></td>
+              <td><a href="#" onclick="get()" class="btn btn-primary">get</a></td>
+            </tr>  
+</div>
+
+
+  
+
+<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<Google Maps Javascript API token>"
+  type="text/javascript"></script>
+
+  
+<script>
+
+  function openTab(evt, tabname) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+  
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+      }
+  
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+  
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(tabname).style.display = "block";
+      evt.currentTarget.className += " active";
+  }
+  
+  if (typeof web3 !== "undefined") {
+    web3 = new Web3(web3.currentProvider);
+  } else {
+    
+    web3 = new Web3(new Web3.providers.HttpProvider("http://40.83.215.160:8083/api/node/rpc"));
+   
+    
+  }
+  
+  var abi = [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "x",
+          "type": "uint256"
+        }
+      ],
+      "name": "set",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "get",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ];
+
+
+    var contractAddress = "0x4a013e93b3d57b3252e600e344074442ad47b8ba";
+  
+    async function init() {
+        SimpleStorage = await new web3.eth.Contract(abi, contractAddress);
+      var accounts = await web3.eth.getAccounts();
+      console.log(accounts);
+      console.log(SimpleStorage);
+      web3.eth.defaultAccount = accounts[0];
+    }
+    init();
+
+    async function set() {
+      var setNumber = document.getElementById('setNumber').value;
+      SimpleStorage.methods.set(setNumber).send({from: web3.eth.defaultAccount}).on('receipt', function(receipt) {
+        console.log(receipt);
+        document.getElementById("setHash").innerHTML = receipt.blockHash;
+        document.getElementById("setBlockNumber").innerHTML = receipt.blockNumber;
+        document.getElementById("setStatus").innerHTML = receipt.status;
+      });
+    }
+
+
+    async function get() {
+      SimpleStorage.methods.get().call().then(function(data){
+        console.log(data);
+        document.getElementById("get").innerHTML = JSON.stringify(data);
+      });
+    }
+
+
+
+  function cleanPadding(bstr) {
+	let len = bstr.length;
+	let i = len;
+	// Count amount of zeroes
+	while (i >= 1) {
+		if(bstr[i-1] != '0') {
+			break;
+		}
+		i--;
+	}
+	return(bstr.substring(0,i));
+}
+
+  </script>
+
+</body>
+</html>
