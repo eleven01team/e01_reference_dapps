@@ -1,0 +1,18 @@
+.private-network{min-height: 100vh; background-color: #ccc; display: flex; align-items: center; justify-content: center;}
+
+.private-network.login .leftarea{ width: 20%; padding: 0px 20px; background-color: #fff;  height: 100vh;display: flex; align-items: center;  }
+
+.private-network.login .rightarea{ width: 80%; padding: 20px;      height: 100vh; display: flex; align-items: flex-end;  justify-content: center;     background: url(../images/private-login-bg.png) #49bea0 no-repeat !important;  }
+
+/*  body{  background-image:  url("images/private-login-bg.png") !important;}*/
+
+.private-network-login-logo{max-width: 250px; margin:auto;}
+
+
+  @media(max-width:780px){
+  	.private-network.login .leftarea{ max-width: 100% !important; flex: 0 0 100%    }
+  	.private-network.login .rightarea{ display: none !important; }
+ 	.private-network.login .form-signin{max-width: 500px; margin:auto;}
+
+
+  	}

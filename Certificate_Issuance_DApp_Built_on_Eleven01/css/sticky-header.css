@@ -1,0 +1,42 @@
+.static-header {
+  padding: 0;    box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);    background-color: #fff;   /* height: 70px; padding-top: 7px;*/ 
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: position 10s;
+  -ms-transition: position 10s;
+  -o-transition: position 10s;
+  transition: all 0.5s ease;
+  z-index: 999 !important;
+}
+
+
+header  {
+    padding: 0;    box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);    background-color: #fff;    
+ 
+  
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: position 10s;
+  -ms-transition: position 10s;
+  -o-transition: position 10s;
+  transition: all 0.5s ease;
+  z-index: 999 !important;
+}
+
+
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0px;
+  animation: smoothScroll 1s forwards;
+}
+@keyframes smoothScroll {
+  0% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/*.gettingstarted{padding-top:60px; }*/
