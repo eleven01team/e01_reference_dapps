@@ -1,40 +1,42 @@
+# Simple Storage DApp Built on Eleven01 Blockchain Protocol
+
 The Objective of this project is to issue the Certificates on Blockchain by using Eleven01 Blockchain Platform.
 
-# Functionality:
-Issue the certificate
+## Functionality:
+1. Issue Certificate
+2. Verify Issued Certificate
 
-# Techstack:
-1.	Javascript
-2.	Truffle
-3.	Web3.js
-4.	Solidity
+Developers can use any tech stack of their choice (ex: React, Angular, etc), however, we have made this DApp with a simple HTML, JavaScript & CSS.
 
-# Pre-requisites:
-1.	Remix IDE
-2.	Code editor
-3.	lite-server
-4.	Metamask & configure Eleven01 RPC (ex: http://40.78.48.235:8083/api/node/rpc)
+## Techstack
+1. HTML & CSS
+2. JavaScript
+3. Web3.js ```npm install web3@1.0.0-beta.41```
+4. Solidity ```npm install solidity@0.4.25```
+5. Truffle ```npm install -g truffle@4.1.15```
+6. node.js (v8.15.0 or above)
 
-# Process of Execute:
-1.	Clone the project
-2.	Create package.json file by using the command “npm init”
-3.	Install npm pakage by using the command “npm install”
-4.	Install lite server by using the command “npm install lite-server”
-5.	Copy the Contract code & Open Remix IDE, Paste the Contract code
-6.	Select the compiler version as per the contract & select the Environment as Web3 Provider and click deploy
-7.	Copy the contract address and replace in Index.html file
-8.	Copy the contract ABI and replace in Index.html file
-9.	Save the Index.html file
-10.	Open terminal & type the command “npm run dev” to start the development server
-11.	We are all set to go!
-12.	Enter the name & level click on Register
-13.	It shows a popup in Metamask, Click on submit.
-14.	You have been issued a certificate in Blockchain
+## Pre-requisites:
+1. Remix IDE
+2. Code Editor
+3. MetaMask pointed to Eleven01 RPC end point (http://40.83.215.160:8083/api/node/rpc)
 
-#Screenshots
+## Process
+1. Clone the Repo (https://github.com/eleven01team/e01_reference_dapps.git)
+2. run ```npm init``` to create package.json
+3. Install npm packages ```npm install```
+4. Install lite-server package ```npm lite-server```
+5. You can deploy the contract to Eleven01 Blockchain network in many ways, however, in this project we are going to deploy by Remix IDE. Copy the contract code & open https://remix.ethereum.org and paste the contract, select Environment as Web3Provier in Run tab. Enter Eleven01 RPC endpoint in Web3 Provider Endpoint Popup
+6. Select the compiler version mentioned in contract code (1st line) and click on Deploy in Run tab
+7. Copy the contract address and replace in Index.html file
+8. Copy the contract ABI and replace in Index.html file & save the file
+9. We are all set to go!
+10.   Open terminal & type the command ```“npm run dev”``` to start the development server
+
+### Screenshots
+
+#### Issue Certificate:
 ![certificateadetails](https://user-images.githubusercontent.com/46344860/55329611-a9b79680-54ac-11e9-8845-54e332f79418.png)
 
-
+#### Verify Certificate:
 ![CertificateDTls](https://user-images.githubusercontent.com/46344860/55329697-dcfa2580-54ac-11e9-86d7-5bd355e42e66.png)
-
-
