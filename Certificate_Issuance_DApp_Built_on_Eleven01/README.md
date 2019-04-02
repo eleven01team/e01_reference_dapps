@@ -1,4 +1,4 @@
-# Simple Storage DApp Built on Eleven01 Blockchain Protocol
+# Certificate Issuance on Eleven01 Blockchain Platform
 
 The Objective of this project is to issue the Certificates on Blockchain by using Eleven01 Blockchain Platform.
 
