@@ -1,15 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Jura:300,400,500,600,700');
 
 @import url('bootstrap.min.css');
-@import url('getstarted.css');
-@import url('sticky-header.css');
-@import url('rotate-wheels.css');
-@import url('mywallet.css');
-@import url('private-network.css');
-@import url('loader.css');
 
-
-@import url('font-awesome/css/font-awesome.min.css');
 
 
 html, body{height: 100%; padding:0px; margin:0px; }
