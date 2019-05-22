@@ -2,11 +2,12 @@
 
 @import url('bootstrap.min.css');
 
-
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 html, body{height: 100%; padding:0px; margin:0px; }
-body {background: #ffffff; font-size: 15px; overflow-x: hidden; color: #333; line-height: 22px; background-repeat: no-repeat;
-    background-size: 100%;}
+body {background: #ffffff; font-size: 15px; overflow-x: hidden; 
+  color: #333; line-height: 22px; background-repeat: no-repeat;
+    background-size: 100%; font-family: 'Montserrat', sans-serif !important;}
 
 body {
 /*    background-image:url("../images/bg-2.png");*/
@@ -1001,6 +1002,29 @@ button#signup3 {right: 43px !important;}
 }
  
 
+@font-face {
+    font-family: 'canterburyregular';
+    src: url('canterbury.woff2') format('woff2'),
+         url('canterbury.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 
 
+
+@font-face {
+    font-family: 'olde_englishregular';
+    src: url('olde_english_regular.woff2') format('woff2'),
+         url('olde_english_regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.certificate-4 h3{    font-family: 'olde_englishregular'; font-size: 45px  !important;}
+
+.certificate-4 h1{font-family: 'Montserrat', sans-serif; font-size: 35px !important;}
+
+h5{font-size: 13px;}

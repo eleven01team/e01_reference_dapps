@@ -10,6 +10,7 @@
       <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="css/custom.css" />
+      <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
       <!--[if lt IE 9]>
@@ -146,7 +147,7 @@
 <style type="text/css">
  h1,h2, h3, h4, h5, h6{color: #394240}
 .certificate-4{
-    font-family: 'Merriweather', serif;
+ 
 /* font-family: 'Merriweather', serif;
 font-family: 'Roboto Slab', serif; */
     background: #fff;    padding: 40px 20px;    border: #394240 solid 6px;   /* background: url(images/certificate/certificate-3-bg.png);
@@ -154,7 +155,7 @@ font-family: 'Roboto Slab', serif; */
 
     .certificate-4 h1{ font-size: 45px; font-weight: 700}
     .certificate-4 h3{ font-size: 30px; font-weight: 700}
-    .certificate-4 .small-texts{ font-size: 13px; font-style: italic}
+    .certificate-4 .small-texts{ font-size: 13px;  }
 .certificate-4 .certificate-footer p{margin-bottom: 5px; font-size: 12px; text-align: center; line-height: 14px}
 .certificate-4 .certificate-footer p.subtitle{font-weight: 700; font-size: 14px; color: #555}
 .certificate-4 .certificate-footer div{text-align:center; color:#8e8a8a; border-top: solid 2px #8e8a8a; margin-top: 20px; padding-top: 10px; line-height: 16px;
@@ -342,7 +343,7 @@ sans-serif; color:#555; font-size: 11px;}
 ];
     //Replace with your contract address
 
-		var contractAddress = "0x98c71aa9d81e675bb3d89c7fce03e2cf717197a3";
+		var contractAddress = "0xc78bddeb7e154d2998d02f0c5e1f9338528db1b3";
 		
 		async function init() {
 			Certificate = await new web3.eth.Contract(abi, contractAddress);

@@ -6,7 +6,7 @@ contract Certificate {
     
     constructor() public {
         admin = msg.sender;
-        certificateDataCount = 1212121;
+        certificateDataCount = 0;
     }
 
     struct CertificateData {
