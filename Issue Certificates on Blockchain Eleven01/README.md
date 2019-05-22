@@ -36,7 +36,7 @@ Developers can use any tech stack of their choice (ex: React, Angular, etc), how
 ### Screenshots
 
 #### Issue Certificate
-![Certificate1](https://user-images.githubusercontent.com/46194208/55422750-5bf16b80-554a-11e9-91ad-547a32c7cd5c.PNG)
+![Updated UI](https://user-images.githubusercontent.com/46481618/58169654-e5056300-7cae-11e9-80b3-bd01bb70dd48.PNG)
 
 #### Verify Certificate
-![Certificate2](https://user-images.githubusercontent.com/46194208/55422826-8d6a3700-554a-11e9-8bb3-38e2176d7c3f.PNG)
+![Updated UI2](https://user-images.githubusercontent.com/46481618/58169655-e5056300-7cae-11e9-805d-50c839689d24.PNG)
