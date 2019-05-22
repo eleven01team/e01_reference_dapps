@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
    <head>
@@ -10,7 +11,6 @@
       <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="css/custom.css" />
-         
       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
       <!--[if lt IE 9]>
@@ -43,24 +43,25 @@
  
 
       <div class="container py-5">
-        <table style="width:100%; padding: 5px">
+        <table style="width:100%; padding: 5px" class="mb-5">
             
             <tr >
-              <td class="pb-3" style="width:300px">
+              <td class="pb-3" style="width:250px">
                     <p class="mb-0">Get Admin details:</p>
-                    <a href="#" onclick="admin()" class="btn btn-primary">Get admin Details</a</td><td class="pb-3"> <span id="admin" class="tabcontent"></span></td>
+                    <a href="#" onclick="admin()" class="btn btn-primary w-100">Get admin Details</a></td><td class="pb-3"> &nbsp; &nbsp;<span id="admin" class="tabcontent"></span></td>
               </tr>
               <tr>
               <td class="pb-3">
                 <p class="mb-0">Certificate data count:</p>
-                <a href="#" onclick="certificateDataCount()" class="btn btn-primary">Certificate data count</a> </td> <td class="pb-3"> <span id="certificateDataCount" class="tabcontent"></span></td>
+                <a href="#" onclick="certificateDataCount()" class="btn btn-primary w-100">Certificate data count</a> </td> <td class="pb-3">&nbsp; &nbsp; <span id="certificateDataCount" class="tabcontent"></span></td>
             </tr>
             <tr>
-              <td class="pb-3"><p class="mb-0">Certificate data :</p>
-                <a href="#" onclick="CertificateData()" class="btn btn-primary">Certificate data!</a> </td><td class="pb-3"> 
-                    <span id="" class="tabcontent"></span>
-                </td>
-               <td> <input id="certificateInputData" type="text" class="form-control" style="width:250px"></td>
+            	 <td class="pb-3"><p class="mb-0">Certificate data :</p> <input id="certificateInputData" type="text" class="form-control" style="width:250px; margin-left: 0px;"></td>
+              <td class="pb-0 ">
+              	<p > </p>
+                <a href="#" onclick="CertificateData()" class="btn btn-primary ml-2" style="width: 250px">Certificate data</a> </td>
+
+              
            
             </tr>
           </table>
@@ -68,12 +69,12 @@
             <table class="table">
                     <tr>
                         <th>Id</th>
-                        <th>Candidate Name</th>
-                        <th>Course Name</th>
-                        <th>Date Of Completion</th>
-                        <th>Institute Name</th>
+                        <th>CandidateName</th>
+                        <th>CourseName</th>
+                        <th>DateOfCompletion</th>
+                        <th>InstituteName</th>
                         <th>Issuer</th>
-                        <th>Issuer Name</th>
+                        <th>IssuerName</th>
                         <th>Location</th>
                       
                     </tr>
@@ -262,6 +263,11 @@
 		}
         init();
 		  
+
+    
+
+		
+
 		async function CertificateData() {
 			var certificateData =  document.getElementById('certificateInputData').value;
             Certificate.methods.certificateData(certificateData).call().then(function(data){
