@@ -19,7 +19,7 @@ Developers can use any tech stack of their choice (ex: React, Angular, etc), how
 ## Pre-requisites:
 1. Remix IDE
 2. Code Editor
-3. MetaMask pointed to Eleven01 RPC end point (http://40.83.215.160:8083/api/node/rpc)
+3. MetaMask pointed to Eleven01 RPC end point (http://104.40.3.236:8083/api/node/rpc)
 
 ## Process
 1. Clone the Repo (https://github.com/eleven01team/e01_reference_dapps.git)
