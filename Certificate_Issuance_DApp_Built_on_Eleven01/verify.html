@@ -91,7 +91,7 @@
     if (typeof web3 !== "undefined") {
         web3 = new Web3(web3.currentProvider);
     } else {
-        web3 = new Web3(new Web3.providers.HttpProvider("http://40.78.48.235:8083/api/node/rpc"));
+        web3 = new Web3(new Web3.providers.HttpProvider("http://104.40.3.236:8083/api/node/rpc"));
       }
 
       //Replace with your ABI
@@ -252,7 +252,7 @@
 ];
     //Replace with your contract address
 
-		var contractAddress = "0x0cc1a11a56b4680c54180f677ea3ef85b462c5c0";
+		var contractAddress = "0x98c71aa9d81e675bb3d89c7fce03e2cf717197a3";
 		
 		async function init() {
 			Certificate = await new web3.eth.Contract(abi, contractAddress);
@@ -261,11 +261,6 @@
 		}
         init();
 		  
-
-    
-
-		
-
 		async function CertificateData() {
 			var certificateData =  document.getElementById('certificateInputData').value;
             Certificate.methods.certificateData(certificateData).call().then(function(data){
