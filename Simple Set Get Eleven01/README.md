@@ -1,43 +1,32 @@
-# Simple Storage DApp Built on Eleven01 Blockchain Protocol
+The Objective of this project is a simplestorage on Eleven01 Platform.
 
-The objective of this DApp is to store and retrieve the data in Blockchain with Eleven01 Platform.
+#Functionality:
+     1.set(you can set a Number)
+     2.get(you can get what you set a Number)
+ #Techstack:
+      1.HTML
+      2.Javascript
+      3.Truffle
+      4.Web3.js
+      5.Solidity
 
-## Functionality:
-1. Insert a number into Blockcain(set function)
-2. Retrieve the stored number from Blockcain (get function)
-
-Developers can use any tech stack of their choice (ex: React, Angular, etc), however, we have made this DApp with a simple HTML, JavaScript & CSS.
-
-## Techstack
-1. HTML & CSS
-2. JavaScript
-3. Web3.js ```npm install web3@1.0.0-beta.41```
-4. Solidity ```npm install solidity@0.4.25```
-5. Truffle ```npm install -g truffle@4.1.15```
-6. node.js (v8.15.0 or above)
-
-## Pre-requisites:
-1. Remix IDE
-2. Code Editor
-3. MetaMask pointed to Eleven01 RPC end point (http://40.83.215.160:8083/api/node/rpc
-)
-
-## Process
-1. Clone the Repo (https://github.com/eleven01team/e01_reference_dapps.git)
-2. run ```npm init``` to create package.json
-3. Install npm packages ```npm install```
-4. Install lite-server package ```npm lite-server```
-5. You can deploy the contract to Eleven01 Blockchain network in many ways, however, in this project we are going to deploy by Remix IDE. Copy the contract code & open https://remix.ethereum.org and paste the contract, select Environment as Web3Provier in Run tab. Enter Eleven01 RPC endpoint in Web3 Provider Endpoint Popup
-6. Select the compiler version mentioned in contract code (1st line) and click on Deploy in Run tab
-7. Copy the contract address and replace in Index.html file
-8. Copy the contract ABI and replace in Index.html file & save the file
-9. We are all set to go!
-10.   Open terminal & type the command ```“npm run dev”``` to start the development server
-
-### Screenshots
-
-#### Setting Value:
-![simpleset](https://user-images.githubusercontent.com/46344860/54926692-d44aa200-4f36-11e9-9ca5-4ab078a5d047.png)
-
-#### Getting Value:
-![simpleget](https://user-images.githubusercontent.com/46344860/54926952-53d87100-4f37-11e9-8225-78add2170b8f.png)
+#Pre-requisites:
+      1.Remix IDE(you can test the code here)
+      2.Code editor
+      3.lite-server
+      4.Metamask & configure on Eleven01 Platform
+      http://13.83.91.1:8083/api/node/rpc
+      
+#Process of Execute:
+      Clone the project
+      Create package.json file by using the command “npm init”
+      Install npm pakage by using the command “npm install”
+      Install lite server by using the command “npm install lite-server”
+      Copy the Contract code & Open Remix IDE, Paste the Contract code
+      Select the compiler version as per the contract & select the Environment as Web3 Provider and click deploy
+      Copy the contract address and replace in Index.html file
+      Copy the contract ABI and replace in Index.html file
+      Save the Index.html file
+      Open terminal & type the command “npm run dev” to start the development server
+      We are all set to go!
+     
