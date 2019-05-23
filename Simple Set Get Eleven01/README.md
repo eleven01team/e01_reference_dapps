@@ -3,6 +3,7 @@ The Objective of this project is a simplestorage on Eleven01 Platform.
 #Functionality:
      1.set(you can set a Number)
      2.get(you can get what you set a Number)
+     
  #Techstack:
       1.HTML
       2.Javascript
