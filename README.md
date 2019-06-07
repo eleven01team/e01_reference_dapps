@@ -26,6 +26,12 @@ Objective of this DApp is to Issue Certificates on Eleven01 Blockchain<br>
 <b>Functionality:</b> Issue Certificate & Generate Hash<br>
 <b>Developed on :</b> TestNet<br>
 
+## 4. Hello World DApp on Eleven01 Blockchain Protocol
+Objective of this DApp is to create simple Hello World DApp for beginers
+<b>Tech Stack:</b> Solidity, Truffle, Web3, Node.js, Metamask, HTML, CSS<br>
+<b>Functionality:</b> Display Hello World & Add custom message<br>
+<b>Developed on :</b> TestNet<br>
+
 ### Build your Own DApp
 Checkout the below link and it gives you great insights to build your next DApp on Eleven01 Blockchain Platform.
 - **[Build a DApp](https://www.youtube.com/watch?v=EHQtyaUKn5I)** - Build a DApp on Eleven01.
