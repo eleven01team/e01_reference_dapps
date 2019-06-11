@@ -180,11 +180,11 @@ sans-serif; color:#555; font-size: 11px;}
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
     <script>
     
-    if (typeof web3 !== "undefined") {
-        web3 = new Web3(web3.currentProvider);
-    } else {
-        web3 = new Web3(new Web3.providers.HttpProvider("http://104.40.3.236:8083/api/node/rpc"));
-      }
+    // if (typeof web3 !== "undefined") {
+    //     web3 = new Web3(web3.currentProvider);
+    // } else {
+    //     web3 = new Web3(new Web3.providers.HttpProvider("http://104.40.3.236:8083/api/node/rpc"));
+    //   }
 
       //Replace with your ABI
 
@@ -348,9 +348,25 @@ sans-serif; color:#555; font-size: 11px;}
 		"0xc78bddeb7e154d2998d02f0c5e1f9338528db1b3";
 		
 		async function init() {
-			Certificate = await new web3.eth.Contract(abi, contractAddress);
-          var accounts = await web3.eth.getAccounts();
-		  web3.eth.defaultAccount = accounts[0];
+			window.addEventListener('load', async () => {
+if (window.ethereum) {
+window.web3 = new Web3(window.ethereum);
+await window.ethereum.enable();
+var web3 = new Web3(Web3.givenProvider)
+var accounts = await web3.eth.getAccounts();
+
+account = accounts[0];
+Certificate = await new web3.eth.Contract(abi, contractAddress);
+console.log(Certificate)
+console.log(accounts)
+}
+else {
+console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+}
+})
+		// 	Certificate = await new web3.eth.Contract(abi, contractAddress);
+        //   var accounts = await web3.eth.getAccounts();
+		//   web3.eth.defaultAccount = accounts[0];
 		}
         init();
 		  
@@ -358,7 +374,7 @@ sans-serif; color:#555; font-size: 11px;}
     
 
         async function register() {
-			console.log('register',register);
+			console.log('register',account);
             var InstituteName = document.getElementById('institutename').value;
             var IssuerName = document.getElementById('issuername').value;
             var CandidateName = document.getElementById('candidatename').value;
@@ -366,7 +382,7 @@ sans-serif; color:#555; font-size: 11px;}
             var Location = document.getElementById('location').value;
             var DateOfCompletion = document.getElementById('date').value;
 
-            Certificate.methods.certificateIssue(InstituteName,IssuerName,CandidateName,CourseName,Location,DateOfCompletion).send({from: web3.eth.defaultAccount}).on('receipt', function(receipt){
+            Certificate.methods.certificateIssue(InstituteName,IssuerName,CandidateName,CourseName,Location,DateOfCompletion).send({from: account}).on('receipt', function(receipt){
                 console.log(receipt);
                 document.getElementById('InstituteName').textContent = receipt.events.CertificateEvent.returnValues.InstituteName;
 				console.log('InstituteName',InstituteName);

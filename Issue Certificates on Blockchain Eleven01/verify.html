@@ -254,12 +254,29 @@
 ];
     //Replace with your contract address
 
-		var contractAddress = "0xc78bddeb7e154d2998d02f0c5e1f9338528db1b3";
+	var contractAddress = 
+		"0xc78bddeb7e154d2998d02f0c5e1f9338528db1b3";
 		
 		async function init() {
-			Certificate = await new web3.eth.Contract(abi, contractAddress);
-          var accounts = await web3.eth.getAccounts();
-		  web3.eth.defaultAccount = accounts[0];
+			window.addEventListener('load', async () => {
+if (window.ethereum) {
+window.web3 = new Web3(window.ethereum);
+await window.ethereum.enable();
+var web3 = new Web3(Web3.givenProvider)
+var accounts = await web3.eth.getAccounts();
+
+account = accounts[0];
+Certificate = await new web3.eth.Contract(abi, contractAddress);
+console.log(Certificate)
+console.log(accounts)
+}
+else {
+console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+}
+})
+		// 	Certificate = await new web3.eth.Contract(abi, contractAddress);
+        //   var accounts = await web3.eth.getAccounts();
+		//   web3.eth.defaultAccount = accounts[0];
 		}
         init();
 		  
@@ -272,11 +289,8 @@
 			var certificateData =  document.getElementById('certificateInputData').value;
             Certificate.methods.certificateData(certificateData).call().then(function(data){
        
-  
-        // var json = JSON.stringify([data]);
-        // console.log("defg",data);
         var tr;
-        // for (var i = 0; i < json.length; i++) {
+     
             tr = $('<tr/>');
             tr.append("<td>" + data.Id + "</td>");
             tr.append("<td>" + data.CandidateName + "</td>");
@@ -288,8 +302,7 @@
             tr.append("<td>" + data.Location + "</td>");
             
             $('table.table').append(tr);
-        // }
-        //document.getElementById("CertificateData").innerHTML = 
+       
       });
 	}
 
