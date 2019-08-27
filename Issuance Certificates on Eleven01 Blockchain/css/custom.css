@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Jura:300,400,500,600,700');
 
 @import url('bootstrap.min.css');
+@import url('../fonts/font-awesome-4.7/css/font-awesome.css');
+
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 html, body{height: 100%; padding:0px; margin:0px; }
 body {background: #ffffff; font-size: 15px; overflow-x: hidden; 
   color: #333; line-height: 22px; background-repeat: no-repeat;
-    background-size: 100%; font-family: 'Montserrat', sans-serif !important;}
+    background-size: 100%; /*font-family: 'Montserrat', sans-serif !important;*/}
 
 body {
 /*    background-image:url("../images/bg-2.png");*/
@@ -892,11 +894,137 @@ button#signup3 {right: 43px !important;}
 .uppercase{text-transform: uppercase !important;}
 
 
+.static-header{padding: 20px}
+.modal-content{background-color: #49bea0 !important;}
+.modal-header{border-bottom: none !important; padding:4px 7px }
+.modal-title{font-size: 16px;}
+.modal-footer{border-top: 0px !important}
+.button-border{border:solid 2px #fff;}
+.modal-backdrop.show{opacity: 0.7 !important}
+.close:hover, .close:focus{ outline: 0 !important;   }
+.c-code{max-width:150px; border: solid 1px #ccc; color:#fff; font-size: 30px;   margin:auto; padding: 15px 20px;  }
+.leftnav ul{padding: 0px; margin:0px;}
+.leftnav ul li{padding: 0px; margin:0px; list-style: none; }
+.leftnav ul li a{font-size: 17px;   display: block; border-bottom: solid 1px #ccc; padding: 8px 3px}
+.leftnav ul li a.border-top{border-top: solid 1px #ccc;}
+a.border-top.activepage {
+    color: #555;
+    font-weight: 500;
+}
+ 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #394240
+    }
+
+    .certificate-4 {
+      font-family: 'Merriweather', serif;
+      /* font-family: 'Merriweather', serif;
+font-family: 'Roboto Slab', serif; */
+      background: #fff;
+      padding: 40px 20px;
+      border: #394240 solid 6px;
+      /* background: url(images/certificate/certificate-3-bg.png);
+    */
+      background-position: center center;
+      background-size: auto;
+      background-repeat: no-repeat;
+      text-align: center;
+    }
+
+    .certificate-4 h1 {
+      font-size: 45px;
+      font-weight: 700
+    }
+
+    .certificate-4 h3 {
+      font-size: 30px;
+      font-weight: 700
+    }
+
+    .certificate-4 .small-texts {
+      font-size: 13px;
+      font-style: italic
+    }
+
+    .certificate-4 .certificate-footer p {
+      margin-bottom: 5px;
+      font-size: 12px;
+      text-align: center;
+      line-height: 14px
+    }
+
+    .certificate-4 .certificate-footer p.subtitle {
+      font-weight: 700;
+      font-size: 14px;
+      color: #555
+    }
+
+    .certificate-4 .certificate-footer div {
+      text-align: center;
+      color: #8e8a8a;
+      border-top: solid 2px #8e8a8a;
+      margin-top: 20px;
+      padding-top: 10px;
+      line-height: 16px;
+      margin-bottom: 20px;
+    }
+
+    .certificate-4 .certificate-body {
+      margin-bottom: 15px;
+      padding: 20px 0px
+    }
+
+    .certificate-4 .certificate-footer {
+      margin: 15px;
+      font-size: 13px
+    }
+
+    .certificate-4 h6 {
+      font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+        sans-serif;
+      color: #555;
+      font-size: 11px;
+    }
+
+    .certificate-4 .trash-hash-title {
+      font-size: 11px;
+    }
+
+    .certificate-4 .trash-hash-text {
+      font-size: 10px;
+      word-break: break-all;
+      line-height: 18px !important;
+      display: inline-block;
+    }
+
+    .certificate-4 .issuedby {
+      font-size: 9px;
+      word-break: break-all;
+    }
+
+    .copytext-subline{ font-size: 12px; color: #edebeb }
+    .codebox{border: solid 1px #fff;
+    font-size: 25px;
+    text-align: center;
+    background: transparent;
+    padding: 7px 14px;
+    color: #fff;
+    width: 132px;
+    display: block;
+    margin: auto;
+    margin: 5px auto; }
+   
 
   @media(max-width:480px){
     .buttons-getting-started {font-size: 16px;  }
     .events-info .card-body{padding:0px;}
     .events-info .card-header .titles p{text-align: left !important; flex: unset;}
+}
  
 
   
@@ -1023,8 +1151,16 @@ button#signup3 {right: 43px !important;}
 
 }
 
-.certificate-4 h3{    font-family: 'olde_englishregular'; font-size: 45px  !important;}
+.certificate-4 h3{ font-size: 30px  !important;   /* font-family: 'olde_englishregular'; font-size: 45px  !important; */}
 
-.certificate-4 h1{font-family: 'Montserrat', sans-serif; font-size: 35px !important;}
+.certificate-4 h1{font-size: 45px  !important;/*font-family: 'Montserrat', sans-serif; font-size: 35px !important;*/}
 
-h5{font-size: 13px;}
+
+.sideinput{
+/* h5{font-size: 13px;} */
+border: solid 1px #ccc;
+padding: 5px 13px;
+min-width: 250px
+ 
+display: inline-block;
+}

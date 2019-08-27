@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+	<meta name="keywords" content="....">
+	<meta name="description" content="....">
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/certificate.css" />
+
+	<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js"
+		integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
+
+	<title>Eleven01 Certificate</title>
+
+	<link
+		href="https://fonts.googleapis.com/css?family=Lilita+One|Merriweather:300,300i,400,400i,700,700i,900,900i|Roboto+Slab:100,300,400,700|Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i"
+		rel="stylesheet">
+
+
+</head>
+
+<body>
+	<header class="static-header p-3">
+		<div>
+			<div class="row">
+				<div class="col-md-6 col">
+					<a href="index.html" class="logo mywallet">
+						<img alt="Eleven01" src="images/eleven01.png" class="">
+					</a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="container find-certificate">
+		<form>
+			<div class="col-md-4 mx-auto p-0 text-center">
+				<h3><b>Verify Certificate</b></h3>
+				<p class="pb-5">Enter Certificate ID, You can find it on your Certificate </p>
+
+				<div class="form-group">
+					<input type="text" class="form-control our-inputs" id="certificateInputData"
+						aria-describedby="fname" placeholder="Certificate ID" required="required" autocomplete="off">
+				</div>
+
+
+				<div class="form-group">
+					<button type="button" class="btn our-buttons buttons-common-2   w-100" data-toggle="modal"
+						data-target="#modal-default-ram" onclick="CertificateData()" id="myids">Find
+						Certificate</button>
+				</div>
+
+
+			</div>
+		</form>
+
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"></script>
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+			crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"></script>
+
+
+		<!-- Modal -->
+		<div class="modal fade verification-info" id="modal-default-ram" tabindex="-1" role="dialog"
+			aria-labelledby="modal-default" aria-hidden="true">
+
+			<div class="modal-dialog" role="document">
+
+				<div class="modal-content">
+
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Certificate Verified</h5>
+						<button type="submit" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+
+					<div class="modal-body">
+
+						<div class="form-group">
+							<label>ID</label>
+							<p id="Id">
+								<p>
+						</div>
+
+
+						<div class="form-group">
+							<label>Candidate Name</label>
+							<p id="CandidateName">
+								<p>
+						</div>
+
+
+						<div class="form-group">
+							<label>Course Name</label>
+							<p id="CourseName">
+								<p>
+						</div>
+
+
+						<div class="form-group">
+							<label>Date Of Completion</label>
+							<p id="DateOfCompletion">
+								<p>
+						</div>
+
+						<div class="form-group">
+							<label>Institute Name</label>
+							<p id="InstituteName" p>
+						</div>
+
+						<div class="form-group">
+							<label>Issuer</label>
+							<p id="Issuer">
+								<p>
+						</div>
+
+
+						<div class="form-group">
+							<label>Issuer Name</label>
+							<p id="IssuerName">
+								<p>
+						</div>
+
+
+						<div class="form-group">
+							<label>Location</label>
+							<p id="Location">
+								<p>
+						</div>
+
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary our-buttons buttons-common-1"
+							data-dismiss="modal" id="refreshpage">Close</button>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+			</script>
+
+		<script>
+
+			if (typeof web3 !== "undefined") {
+				web3 = new Web3(web3.currentProvider);
+
+			} else {
+				web3 = new Web3(new Web3.providers.HttpProvider("http://104.40.3.236:8083/api/node/rpc"));
+
+			}
+
+			//Replace with your ABI
+
+			var abi = [
+				{
+					"constant": true,
+					"inputs": [
+						{
+							"name": "",
+							"type": "uint256"
+						}
+					],
+					"name": "certificateData",
+					"outputs": [
+						{
+							"name": "Id",
+							"type": "uint256"
+						},
+						{
+							"name": "Issuer",
+							"type": "address"
+						},
+						{
+							"name": "InstituteName",
+							"type": "string"
+						},
+						{
+							"name": "IssuerName",
+							"type": "string"
+						},
+						{
+							"name": "CandidateName",
+							"type": "string"
+						},
+						{
+							"name": "CourseName",
+							"type": "string"
+						},
+						{
+							"name": "Location",
+							"type": "string"
+						},
+						{
+							"name": "DateOfCompletion",
+							"type": "string"
+						}
+					],
+					"payable": false,
+					"stateMutability": "view",
+					"type": "function"
+				},
+				{
+					"constant": true,
+					"inputs": [],
+					"name": "certificateDataCount",
+					"outputs": [
+						{
+							"name": "",
+							"type": "uint256"
+						}
+					],
+					"payable": false,
+					"stateMutability": "view",
+					"type": "function"
+				},
+				{
+					"constant": true,
+					"inputs": [],
+					"name": "admin",
+					"outputs": [
+						{
+							"name": "",
+							"type": "address"
+						}
+					],
+					"payable": false,
+					"stateMutability": "view",
+					"type": "function"
+				},
+				{
+					"inputs": [],
+					"payable": false,
+					"stateMutability": "nonpayable",
+					"type": "constructor"
+				},
+				{
+					"anonymous": false,
+					"inputs": [
+						{
+							"indexed": false,
+							"name": "Id",
+							"type": "uint256"
+						},
+						{
+							"indexed": false,
+							"name": "InstituteName",
+							"type": "string"
+						},
+						{
+							"indexed": false,
+							"name": "IssuerName",
+							"type": "string"
+						},
+						{
+							"indexed": false,
+							"name": "CandidateName",
+							"type": "string"
+						},
+						{
+							"indexed": false,
+							"name": "CourseName",
+							"type": "string"
+						},
+						{
+							"indexed": false,
+							"name": "Location",
+							"type": "string"
+						},
+						{
+							"indexed": false,
+							"name": "DateOfCompletion",
+							"type": "string"
+						}
+					],
+					"name": "CertificateEvent",
+					"type": "event"
+				},
+				{
+					"constant": false,
+					"inputs": [
+						{
+							"name": "InstituteName",
+							"type": "string"
+						},
+						{
+							"name": "IssuerName",
+							"type": "string"
+						},
+						{
+							"name": "CandidateName",
+							"type": "string"
+						},
+						{
+							"name": "CourseName",
+							"type": "string"
+						},
+						{
+							"name": "Location",
+							"type": "string"
+						},
+						{
+							"name": "DateOfCompletion",
+							"type": "string"
+						}
+					],
+					"name": "certificateIssue",
+					"outputs": [],
+					"payable": false,
+					"stateMutability": "nonpayable",
+					"type": "function"
+				}
+			];
+
+			var contractAddress = "0x1fafa2e3fedcd5f6c152e2f11e73304eba6f24cd";
+
+			async function init() {
+				window.addEventListener('load', async () => {
+					if (window.ethereum) {
+						window.web3 = new Web3(window.ethereum);
+						await window.ethereum.enable();
+						var web3 = new Web3(Web3.givenProvider)
+						var accounts = await web3.eth.getAccounts();
+						account = accounts[0];
+						Certificate = await new web3.eth.Contract(abi, contractAddress);
+						console.log(accounts)
+					}
+					else {
+						console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+					}
+				})
+			}
+			init();
+
+			async function CertificateData() {
+				var certificateData = document.getElementById('certificateInputData').value;
+				//console.log(certificateData);
+
+				Certificate.methods.certificateData(certificateData).call().then(async function (data) {
+
+					if (data[0] != "0") {
+						//console.log(data[0]);
+						document.getElementById("Id").innerHTML = data[0];
+						document.getElementById("CandidateName").innerHTML = data[4];
+						document.getElementById("CourseName").innerHTML = data[5];
+						document.getElementById("DateOfCompletion").innerHTML = data[7];
+						document.getElementById("InstituteName").innerHTML = data[2];
+						document.getElementById("Issuer").innerHTML = data[1];
+						document.getElementById("IssuerName").innerHTML = data[3];
+						document.getElementById("Location").innerHTML = data[6];
+
+						//$('#modal-default-ram').modal({ show: true });
+					}
+
+					if (data[0] == "") {
+						$('#modal-default-ram').modal({ show: false });
+						alert("Please enter Certificate ID");
+
+					}
+				});
+			}
+
+			async function certificateDataCount() {
+				Certificate.methods.certificateDataCount().call().then(function (data) {
+					console.log(data);
+					document.getElementById("certificateDataCount").innerHTML = JSON.stringify(data);
+				});
+			}
+
+			async function admin() {
+				Certificate.methods.admin().call().then(function (data) {
+					console.log(data);
+					document.getElementById("admin").innerHTML = JSON.stringify(data);
+				});
+			}
+
+
+
+		</script>
+
+
+		<script>
+
+			//myids
+
+			// $(document).ready(function () {
+
+			// 	$('#myids').click(function () {
+			// 		var abc = $("#certificateInputData").val();
+			// 		if (abc == "") {
+			// 			alert("Please enter all values in the fields");
+			// 			//alert(abc)
+			// 			$('#modal-default-ram').modal({ show: true });
+			// 		}
+			// 	})
+			// });
+
+
+
+			//  refresh 
+			$(document).ready(function () {
+
+				// auto refresh   Certificate ID
+				// $('#myids').click(function () {
+				// 	$("#certificateInputData").val('');
+				// })
+
+
+				// auto refresh   page
+				$('#refreshpage, .close').click(function () {
+					location.reload();
+				})
+
+			});
+
+		</script>
+
+</body>
+
+</html>

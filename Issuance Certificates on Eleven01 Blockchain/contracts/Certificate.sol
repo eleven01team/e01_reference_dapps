@@ -4,9 +4,11 @@ contract Certificate {
 
     address public admin;
     
+    uint ID = 11010000001101; 
+    
     constructor() public {
         admin = msg.sender;
-        certificateDataCount = 0;
+        
     }
 
     struct CertificateData {
@@ -21,6 +23,7 @@ contract Certificate {
     }
     
     event CertificateEvent(
+        uint Id,
         string InstituteName,
         string IssuerName,
         string CandidateName,
@@ -29,12 +32,12 @@ contract Certificate {
         string DateOfCompletion
     );
     
-    CertificateData[] public certificateData;
-
+    mapping(uint => CertificateData) public certificateData;
+    
     uint public certificateDataCount;
 
     mapping(address => CertificateData) issueCertificate;
-
+    
     function certificateIssue(
         string memory InstituteName,
         string memory IssuerName,
@@ -43,10 +46,12 @@ contract Certificate {
         string memory Location,
         string memory DateOfCompletion) public {
         certificateDataCount += 1;
-        CertificateData memory _cData = CertificateData(certificateDataCount, msg.sender, InstituteName,IssuerName,CandidateName,CourseName,Location,DateOfCompletion);
-        certificateData.push(_cData);
-        issueCertificate[msg.sender] = _cData;
+        uint Id = ID ++;
+        certificateData[Id] = CertificateData(Id, msg.sender, InstituteName,IssuerName,CandidateName,CourseName,Location,DateOfCompletion);
+        issueCertificate[msg.sender] = certificateData[Id];
         
-        emit CertificateEvent(InstituteName,IssuerName,CandidateName,CourseName,Location,DateOfCompletion);
+        emit CertificateEvent(Id, InstituteName,IssuerName,CandidateName,CourseName,Location,DateOfCompletion);
     }
 }
+
+

@@ -1,0 +1,65 @@
+body{overflow-x:hidden;}
+a{color: #49bea0; font-weight: 400}
+a:hover{text-decoration: none; color: #49bea0}
+a.our-buttons{  color: #fff !important;  }
+ .our-buttons{  background: #49bea0; color: #fff !important; border: solid 2px  #49bea0;   font-weight: 400;
+  position: relative;
+  transition:color 0.25s ease;  }
+.our-buttons:hover{background:#7107f2; color: #fff !important; border-color: #7107f2; } 
+.our-buttons-common-1{  background: #e7d082; color: #555 !important; border: solid 2px  #e7d082;   font-weight: 400;
+  position: relative;
+  transition:color 0.25s ease;  }
+/* .our-buttons:hover{  background:#fff; color: #49bea0 !important; border-color:   #49bea0; }*/
+
+
+  .our-buttons-common-1:hover{  background:#49bea0; color: #fff !important; border-color:   #49bea0; 
+    font-weight: 500 !important;
+  } 
+
+
+  .our-buttons-common-2{  background: #c8ebe2; color: #555 !important; border: solid 2px  #c8ebe2;   font-weight: 400;
+  position: relative;
+  transition:color 0.25s ease;  }
+/* .our-buttons:hover{  background:#fff; color: #49bea0 !important; border-color:   #49bea0; }*/
+
+
+  .our-buttons-common-2:hover{background:#e7d082; color: #555 !important; border-color:#e7d082; font-weight: 500 !important;
+  } 
+
+.our-inputs {
+    border-radius: 20px;
+}
+  .buttons-common-1{border-radius: 20px; font-size: 16px; font-weight: 500; padding: 3px  20px !important}
+.buttons-common-2{border-radius: 20px; font-size: 16px; font-weight: 500;}
+
+  .find-certificate {
+    min-height: calc(100vh - 300px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 100px;
+}
+.verification-info .modal-dialog .form-group{
+      margin-bottom:18px;
+    border: solid 1px #ccc;
+    background: rgba(221, 230, 239, 0.25); padding: 7px
+}
+.verification-info .modal-dialog .form-group label{ font-weight: 600; font-size: 18px; margin-bottom: 0px }
+.verification-info .modal-dialog  .form-group p{ font-size: 15px !important; margin-bottom: 0px   }
+.verification-info .modal-dialog{text-align: center;}
+
+.verification-info .modal-content{border-radius: 15px;}
+
+ .c-code{max-width:150px; border: solid 1px #ccc; color:#fff; font-size: 30px;   margin:auto; padding: 15px 20px;  }
+.leftnav ul{padding: 0px; margin:0px;}
+.leftnav ul li{padding: 0px; margin:0px; list-style: none; }
+.leftnav ul li a{font-size: 17px;   display: block; border-bottom: solid 1px #ccc; padding: 8px 3px}
+.leftnav ul li a.border-top{border-top: solid 1px #ccc;}
+a.border-top.activepage {
+    color: #555;
+    font-weight: 500;
+}
+a.activepage {
+    color: #555;
+    font-weight: 500;
+}
