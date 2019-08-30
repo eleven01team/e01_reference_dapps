@@ -10,6 +10,7 @@
 	<meta name="description" content="....">
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
 	<!-- Bootstrap CSS -->
+	<!-- <link rel="stylesheet" href="css/custom.css" /> -->
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/certificate.css" />
 
@@ -52,10 +53,10 @@
 
 				<div class="form-group">
 					<button type="button" class="btn our-buttons buttons-common-2   w-100" data-toggle="modal"
-						data-target="#modal-default-ram" onclick="CertificateData()" id="myids">Find
+						onclick="CertificateData()" id="myids">Find
 						Certificate</button>
 				</div>
-
+				<!-- data-target="#modal-default-ram" -->
 
 			</div>
 		</form>
@@ -67,15 +68,15 @@
 			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 			crossorigin="anonymous"></script>
 
-
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
 			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
 			crossorigin="anonymous"></script>
+
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 			crossorigin="anonymous"></script>
 
-
+		<!-- popup -->
 		<!-- Modal -->
 		<div class="modal fade verification-info" id="modal-default-ram" tabindex="-1" role="dialog"
 			aria-labelledby="modal-default" aria-hidden="true">
@@ -156,13 +157,13 @@
 				</div>
 			</div>
 		</div>
+		<!-- popup end -->
 
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-			</script>
+			</script> -->
 
 		<script>
 
@@ -358,12 +359,11 @@
 
 			async function CertificateData() {
 				var certificateData = document.getElementById('certificateInputData').value;
-				//console.log(certificateData);
 
 				Certificate.methods.certificateData(certificateData).call().then(async function (data) {
 
 					if (data[0] != "0") {
-						//console.log(data[0]);
+						console.log(data[0]);
 						document.getElementById("Id").innerHTML = data[0];
 						document.getElementById("CandidateName").innerHTML = data[4];
 						document.getElementById("CourseName").innerHTML = data[5];
@@ -373,13 +373,11 @@
 						document.getElementById("IssuerName").innerHTML = data[3];
 						document.getElementById("Location").innerHTML = data[6];
 
-						//$('#modal-default-ram').modal({ show: true });
+						$('#modal-default-ram').modal({ show: true });
 					}
-
-					if (data[0] == "") {
-						$('#modal-default-ram').modal({ show: false });
-						alert("Please enter Certificate ID");
-
+					else {
+						window.alert("Please enter valid  Certificate ID.");
+						$('#certificateInputData').val("");
 					}
 				});
 			}
@@ -398,28 +396,10 @@
 				});
 			}
 
-
-
 		</script>
 
 
 		<script>
-
-			//myids
-
-			// $(document).ready(function () {
-
-			// 	$('#myids').click(function () {
-			// 		var abc = $("#certificateInputData").val();
-			// 		if (abc == "") {
-			// 			alert("Please enter all values in the fields");
-			// 			//alert(abc)
-			// 			$('#modal-default-ram').modal({ show: true });
-			// 		}
-			// 	})
-			// });
-
-
 
 			//  refresh 
 			$(document).ready(function () {
@@ -428,7 +408,6 @@
 				// $('#myids').click(function () {
 				// 	$("#certificateInputData").val('');
 				// })
-
 
 				// auto refresh   page
 				$('#refreshpage, .close').click(function () {

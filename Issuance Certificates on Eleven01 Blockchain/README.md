@@ -32,3 +32,18 @@ Developers can use any tech stack of their choice (ex: React, Angular, etc), how
 8. Copy the contract ABI and replace in Index.html file & save the file
 9. We are all set to go!
 10.   Open terminal & type the command ```“npm run dev”``` to start the development server
+
+### Screenshots
+
+#### Issue Certificate
+
+![CT1](https://user-images.githubusercontent.com/46279814/64024797-d73a6600-cb58-11e9-871d-6b82520bb975.png)
+
+
+![CT2](https://user-images.githubusercontent.com/46279814/64024855-f89b5200-cb58-11e9-8f3e-3ef214f70998.png)
+
+
+#### Verify Certificate
+![CT3](https://user-images.githubusercontent.com/46279814/64024893-0cdf4f00-cb59-11e9-82eb-19e1ec57a4d7.png)
+
+

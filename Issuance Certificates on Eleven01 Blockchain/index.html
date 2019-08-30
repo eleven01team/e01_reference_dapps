@@ -51,46 +51,55 @@
 						<h6><b>http://104.40.3.236:8083/api/node/rpc</b></h6>
 					</div>
 
-
+					<!-- Details of the certificate -->
 					<div class="col-md-4">
 						<h4 class="text-muted"><b>Details of the certificate</b></h4>
 
+
 						<div class="mb-3">
 							<label for="username"><b>Institute Name</b></label>
-							<input type="text" class="form-control our-inputs" id="institutename" required="">
+							<input type="text" class="form-control our-inputs" id="institutename" required=""
+								autocomplete="off">
 						</div>
+
 
 						<div class="mb-3">
 							<label for="coursename"><b>Issuer Name</b></label>
 							<input type="text" class="form-control our-inputs" id="issuername" required="">
 						</div>
 
+
 						<div class="mb-3">
 							<label for="grade"><b>Candidate Name</b></label>
 							<input type="text" class="form-control our-inputs" id="candidatename" required="">
 						</div>
+
 
 						<div class="mb-3">
 							<label for="issuername"><b>Course Name</b></label>
 							<input type="text" class="form-control our-inputs" id="coursename" required="">
 						</div>
 
+
 						<div class="mb-3">
 							<label for="location"><b>Location</b></label>
 							<input type="text" class="form-control our-inputs" id="location" required="">
 						</div>
+
 
 						<div class="mb-3">
 							<label for="date"><b>Date Of Completion</b></label>
 							<input type="Date" class="form-control our-inputs" id="date">
 						</div>
 
+
 						<button id="button" class="btn our-buttons buttons-common-1" data-toggle="modal"
 							id="registercertificate">Register</button>
 					</div>
+					<!-- End Details of the certificate -->
 
 
-
+					<!-- Certificate -->
 					<div class="col-md-8">
 						<div class="col-md-12 p-0 certificate">
 							<div class="certificate-4 text-center">
@@ -146,10 +155,12 @@
 							</div>
 						</div>
 					</div>
+					<!-- End Certificate -->
+
+
 				</div>
 			</div>
 		</div>
-
 	</section>
 
 
@@ -451,12 +462,42 @@ font-family: 'Roboto Slab', serif; */
 		init();
 
 		async function register() {
+
 			var InstituteName = document.getElementById('institutename').value;
+			if (InstituteName == "") {
+				alert("Please enter  Institute Name.");
+				return false;
+			}
+
 			var IssuerName = document.getElementById('issuername').value;
+			if (IssuerName == "") {
+				alert("Please enter  Issuer Name.");
+				return false;
+			}
+
 			var CandidateName = document.getElementById('candidatename').value;
+			if (CandidateName == "") {
+				alert("Please enter  Candidate Name.");
+				return false;
+			}
+
 			var CourseName = document.getElementById('coursename').value;
+			if (CourseName == "") {
+				alert("Please enter  Course Name.");
+				return false;
+			}
+
 			var Location = document.getElementById('location').value;
+			if (Location == "") {
+				alert("Please enter  Location.");
+				return false;
+			}
+			
 			var DateOfCompletion = document.getElementById('date').value;
+			if (DateOfCompletion == "") {
+				alert("Please select  Date.");
+				return false;
+			}
 
 			Certificate.methods.certificateIssue(InstituteName, IssuerName, CandidateName, CourseName, Location, DateOfCompletion).send({
 				from:
@@ -533,7 +574,7 @@ font-family: 'Roboto Slab', serif; */
 	<script>
 		function copytext() {
 			var copyText = document.getElementById("cId");
-			console.log(copyText);
+			//console.log(copyText);
 			copyText.select();
 			document.execCommand("copy");
 			document.getElementById("copied").innerHTML = "Copied";
@@ -546,7 +587,7 @@ font-family: 'Roboto Slab', serif; */
 		$(document).ready(function () {
 
 			// auto refresh   input data
-			$('.verifyclose').click(function () {
+			$('.verifyclose, .close').click(function () {
 				$("input").val("");
 			})
 
