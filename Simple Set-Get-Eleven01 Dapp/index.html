@@ -1,0 +1,272 @@
+<html>
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- web3.js 1.0.0 -->
+  <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js"
+    integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/ionicons.min.css">
+  <link rel="stylesheet" href="css/AdminLTE.min.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+
+    <header class="main-header">
+      <a href="#" class="logo">
+        <span class="logo-mini"><img src="img/logo-icon-small.png" alt=""></span>
+        <span class="logo-lg"><img src="img/logo2.png" alt=""></span>
+      </a>
+      <!-- Header Navbar: style can be found in header.less -->
+      <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle d-md-none d-lg-none d-xl-none" data-toggle="push-menu" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+        <span class="db-title"></span>
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav my-2 my-lg-0">
+            <li class="dropdown user user-menu">
+
+              <span><b>http://104.40.3.236:8083/api/node/rpc</b></span>
+
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <aside class="main-sidebar">
+      <section class="sidebar">
+        <ul class="nav nav-tabs" id="tabs" role="tablist">
+
+          <li class="nav-item active">
+            <a class="nav-link" data-toggle="tab" href="#Set" role="tab" aria-controls="Tab2"
+              aria-selected="false">Set</a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#Get" role="tab" aria-controls="Tab2"
+              aria-selected="false">Get</a>
+          </li>
+
+        </ul>
+      </section>
+    </aside>
+
+    <div class="content-wrapper">
+      <section class="content-header">
+
+      </section>
+      <section class="content">
+        <div class="tab-content" id="tabs-content">
+
+          <!-- tab 1-->
+          <div class="tab-pane fade show active" id="Set" role="tabpanel" aria-labelledby="Tab1-tab">
+            <div class="outer-box">
+              <h3 class="outer-box-title">Set A Number</h3>
+              <form class="form-inline mrb30">
+                <div class="form-group mb-2">
+                  <label for="staticEmail2" class="sr-only">Enter Number </label>
+                  <input type="text" readonly class="form-control-plaintext" id="setit" value="Number">
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                  <label for="set" class="sr-only"></label>
+                  <input type="text" class="form-control" id="setNumber" value="" autocomplete="off">
+                </div>
+                <button type="submit" onclick="set()" class="btn btn-primary mb-2" style='width: 100px'>Set</button>
+              </form>
+              <table class="table table-striped table-bordered">
+                <tr>
+                  <td width="25%">Status</td>
+                  <td>
+                    <p id="setStatus"></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="25%">Block Number</td>
+                  <td>
+                    <p id="setBlockNumber">
+                      <p>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="25%">Block Hash</td>
+                  <td>
+                    <p id="setHash">
+                      <p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <!-- tab 2-->
+          <div class="tab-pane fade" id="Get" role="tabpanel" aria-labelledby="Tab2-tab">
+            <div class="outer-box">
+              <h3 class="outer-box-title">Get A Number</h3>
+              <div class="row">
+                <div class="col-sm-4">
+                  <form class="mrb30">
+                    <div class="form-group">
+                      <label for="address"><a href="#" onclick="get()" class="btn btn-primary"
+                          style='width: 100px'>Get</a></label>
+                      <div type="text" class="form-control" style='width: 100px' value="" id="getting"></div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+    <footer class="main-footer">
+      <p>Copyright &copy; 2019 <a href="#">Eleven01.io</p>
+    </footer>
+  </div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script>
+    $.widget.bridge('uibutton', $.ui.button);
+  </script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/adminlte.min.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=<Google Maps Javascript API token>"
+    type="text/javascript"></script>
+
+
+  <script>
+
+    function openTab(evt, tabname) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+
+      // get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+
+      // get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(tabname).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    if (typeof web3 !== "undefined") {
+      web3 = new Web3(web3.currentProvider);
+    } else {
+
+      web3 = new Web3(new Web3.providers.HttpProvider("http://104.40.3.236:8083/api/node/rpc"));
+
+
+    }
+
+    var abi = [
+      {
+        "constant": false,
+        "inputs": [
+          {
+            "name": "x",
+            "type": "uint256"
+          }
+        ],
+        "name": "set",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "constant": true,
+        "inputs": [],
+        "name": "get",
+        "outputs": [
+          {
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+      }
+    ];
+
+
+    var contractAddress = "0x2d56271dec565611f91a8380a06420ae22cb3f36";
+
+    async function init() {
+      SimpleStorage = await new web3.eth.Contract(abi, contractAddress);
+      var accounts = await web3.eth.getAccounts();
+      console.log(accounts);
+      console.log(SimpleStorage);
+      web3.eth.defaultAccount = accounts[0];
+    }
+    init();
+
+    async function set() {
+      //alert('hi')
+      var setNumber = document.getElementById('setNumber').value;
+      SimpleStorage.methods.set(setNumber).send({ from: web3.eth.defaultAccount }).on('receipt', function (receipt) {
+        console.log(receipt);
+        document.getElementById("setHash").innerHTML = receipt.blockHash;
+        document.getElementById("setBlockNumber").innerHTML = receipt.blockNumber;
+        console.log(receipt.blockNumber);
+        document.getElementById("setStatus").innerHTML = receipt.status;
+      });
+    }
+
+    async function get() {
+      SimpleStorage.methods.get().call().then(function (data) {
+        //console.log(data);
+        document.getElementById("getting").innerHTML = data;
+      });
+    }
+
+    function cleanPadding(bstr) {
+      let len = bstr.length;
+      let i = len;
+      // Count amount of zeroes
+      while (i >= 1) {
+        if (bstr[i - 1] != '0') {
+          break;
+        }
+        i--;
+      }
+      return (bstr.substring(0, i));
+    }
+
+  </script>
+
+</body>
+
+</html>

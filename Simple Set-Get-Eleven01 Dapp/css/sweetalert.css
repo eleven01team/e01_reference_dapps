@@ -84,7 +84,7 @@ body.stop-scrolling {
       border-radius: 50%;
       background-color: #ea7d7d;
       color: white;
-      line-height: 24px;
+      line-height: normal;
       text-align: center;
       margin-right: 3px; }
     .sweet-alert .sa-error-container p {
