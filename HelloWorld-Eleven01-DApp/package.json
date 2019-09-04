@@ -12,7 +12,7 @@
   "keywords": [
     "eleven01"
   ],
-  "author": "Rajesh",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "truffle-hdwallet-provider": "^1.0.10"
